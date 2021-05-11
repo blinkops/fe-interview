@@ -1,0 +1,22 @@
+.content_header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    text-align: left;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    background: #00a0e4;
+    color:white;
+    font-size: 30px;
+} 
+
+  .title {
+    margin-left: 1%;
+    font-size: 24px;
+    font-family: sans-serif;
+  }
+  .healingIcon{
+    width: 2%;
+    margin-left: 1%;
+  }
