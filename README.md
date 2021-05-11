@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Blink-frontend-interview
+Home assignment for a FE position
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Problem Definition
 
-## Available Scripts
+A busy hospital has a paper list of patients waiting to see a doctor.
+Once there is availability, the front desk calls each patient to offer the appointment in the same order they were added to the waitlist.
+The staff member from the front desk has noticed that they waste time trying to find an available patient because the paper list contains too much information.
 
-In the project directory, you can run:
+She would like to view all the waitlist patients, filter them by their age and/or by their average reply time. This view will increase their chances to find an available patient in the first few calls.
 
-### `npm start`
+## Interview Task
+Given the list (see sample-data/patients.json), create a card view that will display all the information about each patient in the waiting list (name, age, averageReplyTime, acceptedOffers, canceledOffers);
+The front desk should filter the card view by age and by averageReplyTime and sort it by name and by age.
+Take into consideration that the list may contain many patients.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Patient Model
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- ID
+- Age (in years)
+- acceptedOffers (integer)
+- canceledOffers (integer)
+- averageReplyTime (integer, in seconds)
 
-### `npm test`
+## Deliverables
+You should write the code in Angular, and work with the mock data provided (sample-data/patients.json).
+Your application should contain a card list view that includes all patients' information and an option to filter and sort the list.
+You can take inspiration from the following card views, but you can do whatever you want:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://dribbble.com/shots/5538143-Project-management-tool-Projects-Card-view
+https://dribbble.com/shots/6849239-Online-Course-Dashboard-Card-View-Data
+https://dribbble.com/shots/6350078-Project-management-tool-Team
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Once you're finished, submit a PR to this repo and add talavivi as the reviewer.
