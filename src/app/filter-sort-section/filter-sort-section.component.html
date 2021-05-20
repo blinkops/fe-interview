@@ -1,0 +1,25 @@
+
+<div class="filter" *ngIf="(patientsService.rangeOptionsSubject$ | async) as option">
+    <ngx-slider class = "filter__ageRange" 
+    [(value)]="patientsService.rangeOptions.minAge" 
+    [(highValue)]="patientsService.rangeOptions.maxAge" 
+    [options]="{'floor': option.minAge, 'ceil': option.maxAge}"></ngx-slider>
+    
+    <ngx-slider class = "filter__replyRange"
+    [(value)]="patientsService.rangeOptions.minReply" 
+    [(highValue)]="patientsService.rangeOptions.maxReply" 
+    [options]="{'floor': option.minReply, 'ceil': option.maxReply}"></ngx-slider>
+    <button class = "filter__submitButton" (click) = "onSubmitFilter()">Submit Changes</button>
+</div>
+<div class="sort">
+    <span class= "sort__label">sort by:</span>
+    <select class = "sort__select" [(ngModel)]="patientsService.sortBy" name="" id="">
+        <option value="name">name</option>
+        <option value="age">age</option>
+    </select>
+    <i (click) = "changeSortDirection()"
+    class = "fa sort__icon" 
+    [ngClass] = "{'fa-angle-double-down': patientsService.sortDirection === 'desc',
+    'fa-angle-double-up': patientsService.sortDirection === 'asce'}"></i>
+</div>
+

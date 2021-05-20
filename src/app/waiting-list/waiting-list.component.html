@@ -1,0 +1,21 @@
+<div *ngIf="patientsService.filteredPatients" class="container">
+  <div class="header">
+    <h1>Waiting Patients List</h1>
+  </div>
+  <app-filter-sort-section></app-filter-sort-section>
+  <hr>
+  <div class="patients">
+    <ng-container *ngFor="let patient of patientsService.filteredPatients | sort:patientsService.sortBy:patientsService.sortDirection  | slice:startIndex:endtIndex" #patientsCards>
+      <app-info-card [patient] = "patient"></app-info-card>
+    </ng-container>
+  </div>
+  <div class="pageSelect">
+    <mat-paginator [length]="patientsService.filteredPatients.length"
+                  [pageSize]="20"
+                  [pageSizeOptions]="[10, 20, 50, 100]"
+                  (page) = "onChangePage($event)">
+    </mat-paginator>
+    
+  </div>
+</div>
+<div class="loader" *ngIf = "!patientsService.filteredPatients"></div>

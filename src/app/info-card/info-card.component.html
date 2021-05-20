@@ -1,0 +1,28 @@
+<div class="patientCard">
+    <h2 class="patientCard__name">
+        {{patient.name}}
+    </h2>
+    <div class="patientCard__age">
+        Age: {{patient.age}}
+    </div>
+    <div class="patientCard__offersData">
+        <div class="patientCard__offersData__acceptedOffers">
+            <div class="patientCard__offersData__amount">{{patient.acceptedOffers}}</div>
+            <div class="patientCard__offersData__description">
+                Accepted Offers
+            </div>
+        </div>
+        <div class="patientCard__offersData__canceledOffers">
+            <div class="patientCard__offersData__amount">{{patient.canceledOffers}}</div>
+            <div class="patientCard__offersData__description">
+                Canceled Offers
+            </div>
+        </div>
+        <div class="patientCard__offersData__averageReplyTime">
+            <div class="patientCard__offersData__amount">{{patient.averageReplyTime}}</div>
+            <div class="patientCard__offersData__description">
+                Average Reply Time
+            </div>
+        </div>
+    </div>
+</div>

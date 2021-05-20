@@ -1,0 +1,81 @@
+@import '_variables';
+@mixin label($content, $top, $left: 0, $font-size: 1rem, $text-align: center, $width: 100%){
+    position: relative;
+    width:45%;
+    &:after{
+        content: $content;
+        font-size:$font-size;
+        position: absolute;
+        top: $top;
+        left: $left;
+        width: $width;
+        text-align: $text-align;
+        
+    }
+}
+
+.sort{
+    display: flex;
+    align-items: center;
+    &__select{
+        padding: 1em 3em;
+        border: none;
+    }
+    &__icon{
+        cursor: pointer;
+        font-size: 2em;
+        margin-left: .5rem;
+    }
+    &__label{
+        margin-right: .5rem;
+    }
+}
+.filter{
+    width: 70%;
+    margin: 0 auto;
+    &__ageRange{
+        @include label('Age (years)', -4rem);
+    }
+    &__replyRange{
+        @include label('Average Reply (seconds)', -4rem);
+        margin-left: 10%;
+    }
+    &__submitButton{
+        display: block;
+        cursor: pointer;
+        margin: 1rem auto 0 auto;
+        padding: 1rem 1.5rem;
+        color: $black;
+        background: $white;
+        border: 1px solid $black;
+        transition: border .2s ease-in , background-color .2s ease-in, color .2s ease-in;
+        &:hover{
+            background: $black;
+            border: 1px solid $white;
+            color: $white
+        }
+    }
+}
+    
+
+@media (max-width: 700px) {
+    ::ng-deep.mat-paginator-range-actions, ::ng-deep.mat-paginator-page-size{
+        margin: 0 auto !important;
+    }
+    .filter{
+        &__ageRange{
+            @include label('Age (years)',-2.5rem,-3rem,.6rem, left,10%);
+            width: 100%;
+        }
+        &__replyRange{
+            @include label('Average Reply (seconds)',-2.5rem,-3rem,.6rem, left,10%);
+            width:100%;
+            margin-left: 0;
+        }
+    }
+    .sort{
+        justify-content: center;
+        margin-top: 1rem;
+        margin-right: 1.9rem;
+    }
+}
